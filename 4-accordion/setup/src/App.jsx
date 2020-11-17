@@ -3,18 +3,19 @@ import data from './data'
 import SingleQuestion from './Question'
 
 function App () {
-  // const { data } = data
+  const [questions, setQuestions] = useState(data)
 
-  return (
+  return (<main>
     <div className='container'>
       <h3>Questions and answers about login</h3>
-      <div className='section'>
+      <div className='info'>
         {data.map((question) => {
           return <SingleQuestion key={question.id} {...question} />
         })}
 
       </div>
     </div>
+  </main>
   )
 }
 
